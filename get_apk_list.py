@@ -13,11 +13,14 @@ from pathos.multiprocessing import ProcessingPool
 from tqdm import tqdm
 import platform
 
+DRIVER_PATH = "/mnt/c/Users/k1rha/Desktop/Tools/chromedriver.exe"
 # HOW to Use 
-# from getapklist import Getlists
-    # getlist = Getlists("basic", "happylabs") 
-    # getlist.init_request()
-    # getlist.get_result()
+
+from get_apk_list import Getlists
+
+getlist = Getlists("basic", "happylabs") 
+getlist.init_request()
+getlist.get_result()
 
 class Getlists:
 
@@ -61,7 +64,7 @@ class Getlists:
         self.request_url+="&gl="+self.country
         print (self.request_url)
         if platform.system() == "Windows":
-            self.chrome_driver = "./chromedriver.exe"
+            self.chrome_driver = DRIVER_PATH
         else:
             self.chrome_driver = "./chromedriver"
 
